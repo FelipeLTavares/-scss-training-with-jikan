@@ -1,0 +1,62 @@
+@import '../../styles/variables.scss';
+
+$widths: (
+  xs: 45vw,
+  sm: 30vw,
+  md: 22vw,
+  lg: 16vw
+);
+
+@mixin measures($width) {
+    .container {
+        width: $width;
+        height: calc($width * 1.3);
+    }
+    
+    .animeImage {
+        width:$width;
+        height:$width;
+    }
+  }
+
+
+.container {
+    width: map-get($widths , xs );
+    height: calc(map-get($widths, xs ) * 1.3);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(0.9)
+    }
+}
+
+.animeImage {
+    width: map-get($widths , xs );
+    height: map-get($widths , xs );
+    
+    img {
+        object-fit: cover;
+        background-color: gray;
+    }
+}
+
+.animeTitle {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, sm)) {
+    @include measures(map-get($widths , sm ));
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, md)) {
+    @include measures(map-get($widths , md ));
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, lg)) {
+    @include measures(map-get($widths , lg ));
+}
+

@@ -1,0 +1,54 @@
+@import './styles/variables.scss';
+
+header {
+    width: 100%;
+    height: 10vh;
+    background-color: gray;
+}
+
+main {
+    width: 100%;
+    min-height: 80vh;
+
+    padding: 10px;
+
+    .allAnimes {
+        display: grid;
+        align-content: center;
+        grid-template-columns: 1fr 1fr;
+
+        padding: 2rem 0;
+        gap: 1rem;
+    }
+}
+
+footer {
+    width: 100%;
+    height: 10vh;
+    background-color: gray;
+}
+
+
+@media screen and (min-width: map-get($grid-breakpoints, sm)) {
+    main {
+        .allAnimes {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, md)) {
+    main {
+        .allAnimes {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, lg)) {
+    main {
+        .allAnimes {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
+}
